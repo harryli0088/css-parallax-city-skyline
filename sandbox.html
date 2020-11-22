@@ -264,6 +264,37 @@
       75% { transform: translate(0,-40%); }
       100% { transform: translate(0%); }
     }
+
+    #fake_scrollbar_container {
+      animation: fake_scrollbar_container var(--animation-time) infinite;
+      height: 100%;
+      width: 1em;
+      background-color: #eee;
+      position: absolute;
+      left: 100%;
+    }
+    @keyframes fake_scrollbar_container {
+      0% { opacity: 1; }
+      25% { opacity: 0; }
+      50% { opacity: 1; }
+      75% { opacity: 1; }
+      100% { opacity: 1; }
+    }
+
+    #fake_scrollbar {
+      animation: fake_scrollbar var(--animation-time) infinite;
+      height: 15%;
+      width: 1em;
+      background-color: gray;
+      position: absolute;
+    }
+    @keyframes fake_scrollbar {
+      0% { top: 0; transform: translateY(0); }
+      25% { top: 0; transform: translateY(0); }
+      50% { top: 0; transform: translateY(0); }
+      75% { top: 100%; transform: translateY(-100%); }
+      100% { top: 0; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
@@ -332,6 +363,8 @@
         <p>Using the CSS perspective property, we can shift elements along the Z axis (going in and out of the screen).</p>
 
         <div id="explanation_layers_container">
+          <div id="fake_scrollbar_container"><div id="fake_scrollbar"></div></div>
+
           <div id="sun_explanation" class="sun_fill explanation_layer">
             <svg viewBox="0 0 400 300">
               <circle cy="150" cx="200" r="20"></circle>
