@@ -44,51 +44,69 @@
     }
 
     #sensoji {
-      fill: #111115;
       transform: translateZ(0px) scale(1);
+    }
+    .sensoji_fill {
+      fill: #111115;
     }
 
     #tokyo_tower {
+      transform: translateZ(-0.25px) translateY(15%) scale(1.25);
+    }
+    .tokyo_tower_fill {
       fill: #161B25;
-      transform: translateZ(-0.25px) translateY(25%) scale(1.25);
     }
 
-    #city3 {
-      fill: #19202f;
+    #city {
       transform: translateZ(-.5px) translateY(25%) scale(1.5);
+    }
+    .city_fill {
+      fill: #19202f;
     }
 
     #skytree {
-      fill: #222032;
       transform: translateZ(-.75px) translateY(25%) scale(1.75);
+    }
+    .skytree_fill {
+      fill: #222032;
     }
 
     #hills {
-      fill: #202a5c;
       transform: translateZ(-2.25px) translateY(35%) scale(3.25);
+    }
+    .hills_fill {
+      fill: #202a5c;
     }
 
     #cloud1 {
-      fill: #4a4d82;
       transform: translateZ(-2.5px) translateY(30%) scale(3.5);
+    }
+    .cloud1_fill {
+      fill: #4a4d82;
     }
 
     #fuji {
-      fill: #5f5d99;
       transform: translateZ(-3px) scale(4);
+    }
+    .fuji_fill {
+      fill: #5f5d99;
     }
 
     #cloud2 {
-      fill: #8a7d9e;
       transform: translateZ(-3.5px) translateY(-25%) scale(4.5);
+    }
+    .cloud2_fill {
+      fill: #8a7d9e;
     }
 
     #sun {
-      fill: #ff7e00;
       transform: translateZ(-6px) scale(7);
     }
+    .sun_fill {
+      fill: #ff7e00;
+    }
 
-    .content {
+    #landing {
       position: relative;
       background-color: #111115;
       height: 100vh;
@@ -112,67 +130,284 @@
     a:visited {
       color: #BB8FCE;
     }
+
+    #explanation {
+      background: #fff;
+      height: 100vh;
+      padding: 1em;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    #explanation_layers_container {
+      position: relative;
+      width: 50vw;
+      height: 37.5vw;
+    }
+    .explanation_layer {
+      position: absolute;
+      width: 50vw;
+      z-index: 0;
+    }
+
+
+
+
+    :root {
+      --animation-time: 10s;
+    }
+
+    #sun_explanation {
+      animation: sun_explanation var(--animation-time);
+      animation-iteration-count: infinite;
+    }
+    @keyframes sun_explanation {
+      0% { transform: translate(0%); }
+      25% { transform: translate(calc(-8 * min(1vw,1vh)),calc(-8 * min(1vw,1vh))); }
+      50% { transform: translate(0%); }
+      75% { transform: translate(0,0); }
+      100% { transform: translate(0%); }
+    }
+    #sun_explanation svg {
+      transform: translateY(-25%);
+    }
+
+    #cloud2_explanation {
+      animation: cloud2_explanation var(--animation-time);
+      animation-iteration-count: infinite;
+    }
+    @keyframes cloud2_explanation {
+      0% { transform: translate(0%); }
+      25% { transform: translate(calc(-6 * min(1vw,1vh)),calc(-6 * min(1vw,1vh))); }
+      50% { transform: translate(0%); }
+      75% { transform: translate(0,-5%); }
+      100% { transform: translate(0%); }
+    }
+    #cloud2_explanation svg {
+      transform: translateY(-30%);
+    }
+
+    #fuji_explanation {
+      animation: fuji_explanation var(--animation-time);
+      animation-iteration-count: infinite;
+    }
+    @keyframes fuji_explanation {
+      0% { transform: translate(0%); }
+      25% { transform: translate(calc(-4 * min(1vw,1vh)),calc(-4 * min(1vw,1vh))); }
+      50% { transform: translate(0%); }
+      75% { transform: translate(0,-10%); }
+      100% { transform: translate(0%); }
+    }
+    #fuji_explanation svg {
+      transform: translateY(-25%);
+    }
+
+    #cloud1_explanation {
+      animation: cloud1_explanation var(--animation-time);
+      animation-iteration-count: infinite;
+    }
+    @keyframes cloud1_explanation {
+      0% { transform: translate(0%); }
+      25% { transform: translate(calc(-2 * min(1vw,1vh)),calc(-2 * min(1vw,1vh))); }
+      50% { transform: translate(0%); }
+      75% { transform: translate(0,-15%); }
+      100% { transform: translate(0%); }
+    }
+    #cloud1_explanation svg {
+      transform: translateY(-15%);
+    }
+
+    #hills_explanation {
+      animation: hills_explanation var(--animation-time);
+      animation-iteration-count: infinite;
+    }
+    @keyframes hills_explanation {
+      0% { transform: translate(0%); }
+      25% { transform: translate(0,0); }
+      50% { transform: translate(0%); }
+      75% { transform: translate(0,-20%); }
+      100% { transform: translate(0%); }
+    }
+    #hills_explanation svg {
+      transform: translateY(-10%);
+    }
+
+    #skytree_explanation {
+      animation: skytree_explanation var(--animation-time);
+      animation-iteration-count: infinite;
+    }
+    @keyframes skytree_explanation {
+      0% { transform: translate(0%); }
+      25% { transform: translate(calc(2 * min(1vw,1vh)),calc(2 * min(1vw,1vh))); }
+      50% { transform: translate(0%); }
+      75% { transform: translate(0,-25%); }
+      100% { transform: translate(0%); }
+    }
+
+    #city_explanation {
+      animation: city_explanation var(--animation-time);
+      animation-iteration-count: infinite;
+    }
+    @keyframes city_explanation {
+      0% { transform: translate(0%); }
+      25% { transform: translate(calc(4 * min(1vw,1vh)),calc(4 * min(1vw,1vh))); }
+      50% { transform: translate(0%); }
+      75% { transform: translate(0,-30%); }
+      100% { transform: translate(0%); }
+    }
+
+    #tokyo_tower_explanation {
+      animation: tokyo_tower_explanation var(--animation-time);
+      animation-iteration-count: infinite;
+    }
+    @keyframes tokyo_tower_explanation {
+      0% { transform: translate(0%); }
+      25% { transform: translate(calc(6 * min(1vw,1vh)),calc(6 * min(1vw,1vh))); }
+      50% { transform: translate(0%); }
+      75% { transform: translate(0,-35%); }
+      100% { transform: translate(0%); }
+    }
+
+    #sensoji_explanation {
+      animation: sensoji_explanation var(--animation-time);
+      animation-iteration-count: infinite;
+    }
+    @keyframes sensoji_explanation {
+      0% { transform: translate(0%); }
+      25% { transform: translate(calc(8 * min(1vw,1vh)),calc(8 * min(1vw,1vh))); }
+      50% { transform: translate(0%); }
+      75% { transform: translate(0,-40%); }
+      100% { transform: translate(0%); }
+    }
   </style>
 </head>
 <body>
   <div id="parallax">
-    <div id="sun" class="layer">
+    <div id="sun" class="sun_fill layer">
       <svg viewBox="0 0 400 300">
-        <circle id="cSun" cy="150" cx="200" r="20"></circle>
+        <circle cy="150" cx="200" r="20"></circle>
       </svg>
     </div>
 
-    <div id="cloud2" class="layer">
+    <div id="cloud2" class="cloud2_fill layer">
       <svg viewBox="0 0 400 300">
         <path d="M 149 198 C 164 198 179 198 193 195 C 201 193 212 196 220 196 C 227 196 234 196 241 196 C 243 196 247 196 249 196 C 254 194 261 194 265 194 C 282 194 299 203 315 198 C 320 197 326 198 331 198 C 342 198 354 198 365 198 C 371 198 379 200 384 198 C 385 198 390 196 389 195 C 382 188 372 193 363 187 C 362 186 359 186 359 185 C 357 181 352 184 348 181 C 346 180 341 176 339 175 C 337 174 331 167 329 168 C 323 169 321 174 315 174 C 313 174 316 183 314 182 C 310 181 301 182 297 181 C 293 180 282 174 278 174 C 276 174 271 172 269 173 C 268 174 270 178 270 180 C 269 182 264 182 262 181 C 253 180 245 172 235 170 C 229 169 221 168 214 168 C 212 168 207 168 206 168 C 200 171 196 177 190 178 C 183 179 173 173 166 173 C 163 173 159 172 157 173 C 154 174 161 181 159 182 C 151 185 138 185 128 185 C 125 185 117 184 115 189 C 116 190 118 193 120 193 C 123 194 127 193 129 195 C 133 197 140 199 144 199 Z" opacity="0.8"></path>
       </svg>
     </div>
 
-    <div id="fuji" class="layer">
+    <div id="fuji" class="fuji_fill layer">
       <svg viewBox="0 0 400 300">
         <path d="M 0 185 C 10 182 23 177 34 172 C 38 170 42 171 46 168 C 47 168 48 167 48 167 C 52 166 57 164 60 162 C 62 161 67 160 70 158 C 74 155 77 153 81 151 C 82 150 83 148 84 147 C 89 143 95 139 98 136 C 100 135 107 127 109 127 C 112 126 114 127 115 125 C 115 125 118 125 119 124 C 120 124 123 124 124 124 C 126 125 134 125 136 125 C 142 127 147 133 149 135 C 152 137 155 139 157 141 C 163 148 173 150 179 157 C 187 165 197 171 208 177 C 216 181 225 183 234 187 C 237 189 242 189 245 190 C 259 195 273 198 287 201 C 298 203 311 201 321 205 C 324 207 328 206 331 206 C 336 206 341 207 346 207 C 355 209 364 209 373 209 C 377 209 382 208 385 209 C 387 210 397 210 400 210 L 400,300 0,300 0,210"></path>
       </svg>
     </div>
 
-    <div id="cloud1" class="layer">
+    <div id="cloud1" class="cloud1_fill layer">
       <svg viewBox="0 0 400 300">
         <path d="M -1 138 C 4 135 19 137 27 137 C 29 137 33 137 36 138 C 40 140 44 143 50 144 C 54 145 59 145 64 146 C 65 146 68 147 69 146 C 73 145 71 144 72 143 C 73 141 82 141 85 142 C 86 142 96 142 97 143 C 101 146 115 147 121 146 C 124 146 122 142 120 141 C 117 139 116 139 113 138 C 108 138 98 136 96 133 C 95 133 95 130 97 128 C 98 127 102 130 104 130 C 108 130 108 128 112 129 C 115 130 124 131 127 132 C 129 133 130 132 132 133 C 136 134 140 134 144 135 C 147 136 147 137 150 138 C 153 139 160 138 164 138 C 167 138 173 139 176 138 C 178 137 186 136 189 137 C 196 140 203 144 212 146 C 220 148 230 149 238 150 C 251 153 265 153 276 156 C 277 156 289 156 288 157 C 287 160 277 159 272 159 C 260 161 246 159 234 159 C 231 159 226 158 223 159 C 213 161 201 160 191 162 C 187 163 181 162 177 163 C 173 164 161 165 157 164 C 155 164 157 162 155 161 C 151 160 145 161 141 161 C 135 161 129 160 122 160 C 118 160 114 160 110 161 C 104 162 96 161 90 162 C 88 163 84 162 81 162 C 74 162 67 162 59 162 C 49 162 39 162 29 162 C 25 162 20 161 17 162 C 11 163 5 164 -1 164 Z" opacity="0.9"></path>
       </svg>
     </div>
 
-    <div id="hills" class="layer">
+    <div id="hills" class="hills_fill layer">
       <svg viewBox="0 0 400 300">
         <path d="M -1 199 C 7 196 17 193 26 188 C 31 185 37 182 43 179 C 46 177 50 177 52 174 C 53 174 56 174 57 173 C 62 172 68 173 73 172 C 76 171 78 171 81 171 C 88 172 95 175 100 179 C 103 182 109 182 113 185 C 115 187 117 189 119 190 C 130 195 141 194 152 196 C 161 198 171 199 180 199 C 185 199 190 199 194 199 C 196 199 198 199 200 199 C 207 196 215 197 222 194 C 225 193 227 188 231 186 C 235 183 240 182 244 179 C 248 176 253 177 257 175 C 257 174 257 173 258 173 C 260 172 262 172 263 172 C 271 168 278 165 286 161 C 289 159 294 160 297 159 C 300 158 300 157 302 155 C 302 154 304 155 305 155 C 307 154 312 152 314 151 C 316 149 319 146 322 145 C 323 145 325 145 326 145 C 330 144 338 144 342 145 C 350 145 355 153 361 156 C 363 157 363 161 365 162 C 373 165 380 172 389 174 C 390 174 392 176 393 177 C 396 178 400 179 403 179 L 400,300 0,300 Z"></path>
       </svg>
     </div>
 
-    <div id="skytree" class="layer">
+    <div id="skytree" class="skytree_fill layer">
       <svg viewBox="0 0 400 300">
         <path d="M 0,200 20,200 20,160 25,160 25,155 32,155 32,147 33,147 33,155 35,155 35,160 40,160 40,200 90,200 90,170 110,170 110,150 140,150 140,160 160,160 160,150 170,150 170,145 171,145 171,150 190,150 190,190 210,190 210,200 215,200 215,125 225,125 225,123 230,123 230,125 235,125 235,220 300,220 304,170 307,110 304,100 304,97 308,96 309,78 307.5,77 309,75.5 308,74 309.5,73 310,62 311.5,61.5 312.5,20 314.5,20 315.5,61.5 317,62 317.5,73 319,74 318,75.5 319.5,77 318,78 319,96 323,97 323,100 320,110 323,170 327,220 400,220 400,400 0,400 0,200 Z"></path>
       </svg>
     </div>
 
-    <div id="city3" class="layer">
+    <div id="city" class="city_fill layer">
       <svg viewBox="0 0 400 300">
         <path d="M 0,210 40,210 40,250 50,250 50,100 55,100 59,93 62.5,96 66,93 70,100 75,100 75,195 95,195 95,235 125,235 125,125 155,125 155,205 175,205 175,225 215,225 215,195 245,195 245,115 265,115 265,215 275,215 275,115 286,115 286,110 287,110 287,115 291,115 291,105 292,105 292,115 295,115 295,195 335,195 335,135 345,135 345,130 349,130 349,125 350,125 350,130 352,130 352,126 353,126 353,130 355,130 355,135 360,135 360,175 380,175 380,200 400,200 400,300 0,300 0,210 Z"></path>
       </svg>
     </div>
 
-    <div id="tokyo_tower" class="layer">
+    <div id="tokyo_tower" class="tokyo_tower_fill layer">
       <svg viewBox="0 0 400 300">
-        <path d="M 0,200 10,200 10,140 25,135 25,220 45,220 45,120 48,120 48,110 49,110 49,120 65,120 65,230 75,230 Q 95,220 100,170 L 98,170 97,162 100.5,162 Q 102,142 103,102 L 104,102 105,62 106,102 107,102 Q 108,142 109.5,162 L 113,162 112,170 110,170 Q 115,220 135,230 L 155,230 155,150 162,150 162,143 163,143 163,150 175,150 175,230 225,230 225,210 Q 221,150 230,110 231,102 236,101 239,100 242,101 247,102 248,110 257,150 253,210 L 273,210 273,220 293,220 293,160 308,160 308,150 318,150 318,180 338,180 338,220 348,220 348,140 378,140 378,110 400,110 400,300 0,300 0,200 Z"></path>
+        <path d="M 0,225 10,225 10,165 25,160 25,245 45,245 45,145 48,145 48,135 49,135 49,145 65,145 65,255 75,255 Q 95,245 100,195 L 98,195 97,187 100.5,187 Q 102,167 103,127 L 104,127 105,87 106,127 107,127 Q 108,167 109.5,187 L 113,187 112,195 110,195 Q 115,245 135,255 L 155,255 155,175 162,175 162,168 163,168 163,175 175,175 175,255 225,255 225,235 Q 221,175 230,135 231,127 236,126 239,125 242,126 247,127 248,135 257,175 253,235 L 273,235 273,245 293,245 293,185 308,185 308,175 318,175 318,205 338,205 338,245 348,245 348,165 378,165 378,135 400,135 400,300 0,300 0,225 Z"></path>
       </svg>
     </div>
 
-    <div id="sensoji" class="layer">
+    <div id="sensoji" class="sensoji_fill layer">
       <svg viewBox="0 0 400 300">
         <path d="M 0,300 142,300 142,250 138,250 142,246 137,241 117,240 115,235 110,233 110,232 Q 118,231 120,229 L 120,227 Q 135,222 140,202 L 200,202 200,287 195,287 195,284 Q 185,281 185,266 185,251 195,248 L 175,248 175,300 200,300 225,300 225,248 205,248 Q 215,251 215,266 215,281 205,284 L 205,287 200,287 200,202 260,202 Q 265,222 280,227 L 280,229 Q 282,231 290,232 L 290,233 285,235 283,240 263,241 258,246 262,250 258,250 258,300 Z"></path>
       </svg>
-      <div class="content">
+      <div id="landing">
         <div><img id="chevron" src="./chevron.svg" alt="Scroll down!"></div>
         <div>I made this parallax Tokyo city skyline with pure CSS and SVG!</div>
         <div>Checkout the <a href="https://github.com/harryli0088/css-parallax-city-skyline" target="_blank" rel="noopener noreferrer">Github Repo</a>!</div>
         <div>Inspired by and built off of Jeremy Hull's <a href="https://codepen.io/coderado" target="_blank" rel="noopener noreferrer">CodePen</a>.</div>
+      </div>
+      <div id="explanation">
+        <h2>How it works</h2>
+
+        <p>Using the CSS perspective property, we can shift elements along the Z axis (going in and out of the screen).</p>
+
+        <div id="explanation_layers_container">
+          <div id="sun_explanation" class="sun_fill explanation_layer">
+            <svg viewBox="0 0 400 300">
+              <circle cy="150" cx="200" r="20"></circle>
+            </svg>
+          </div>
+
+          <div id="cloud2_explanation" class="cloud2_fill explanation_layer">
+            <svg viewBox="0 0 400 300">
+              <path d="M 149 198 C 164 198 179 198 193 195 C 201 193 212 196 220 196 C 227 196 234 196 241 196 C 243 196 247 196 249 196 C 254 194 261 194 265 194 C 282 194 299 203 315 198 C 320 197 326 198 331 198 C 342 198 354 198 365 198 C 371 198 379 200 384 198 C 385 198 390 196 389 195 C 382 188 372 193 363 187 C 362 186 359 186 359 185 C 357 181 352 184 348 181 C 346 180 341 176 339 175 C 337 174 331 167 329 168 C 323 169 321 174 315 174 C 313 174 316 183 314 182 C 310 181 301 182 297 181 C 293 180 282 174 278 174 C 276 174 271 172 269 173 C 268 174 270 178 270 180 C 269 182 264 182 262 181 C 253 180 245 172 235 170 C 229 169 221 168 214 168 C 212 168 207 168 206 168 C 200 171 196 177 190 178 C 183 179 173 173 166 173 C 163 173 159 172 157 173 C 154 174 161 181 159 182 C 151 185 138 185 128 185 C 125 185 117 184 115 189 C 116 190 118 193 120 193 C 123 194 127 193 129 195 C 133 197 140 199 144 199 Z" opacity="0.8"></path>
+            </svg>
+          </div>
+
+          <div id="fuji_explanation" class="fuji_fill explanation_layer">
+            <svg viewBox="0 0 400 300">
+              <path d="M 0 185 C 10 182 23 177 34 172 C 38 170 42 171 46 168 C 47 168 48 167 48 167 C 52 166 57 164 60 162 C 62 161 67 160 70 158 C 74 155 77 153 81 151 C 82 150 83 148 84 147 C 89 143 95 139 98 136 C 100 135 107 127 109 127 C 112 126 114 127 115 125 C 115 125 118 125 119 124 C 120 124 123 124 124 124 C 126 125 134 125 136 125 C 142 127 147 133 149 135 C 152 137 155 139 157 141 C 163 148 173 150 179 157 C 187 165 197 171 208 177 C 216 181 225 183 234 187 C 237 189 242 189 245 190 C 259 195 273 198 287 201 C 298 203 311 201 321 205 C 324 207 328 206 331 206 C 336 206 341 207 346 207 C 355 209 364 209 373 209 C 377 209 382 208 385 209 C 387 210 397 210 400 210 L 400,300 0,300 0,210"></path>
+            </svg>
+          </div>
+
+          <div id="cloud1_explanation" class="cloud1_fill explanation_layer">
+            <svg viewBox="0 0 400 300">
+              <path d="M -1 138 C 4 135 19 137 27 137 C 29 137 33 137 36 138 C 40 140 44 143 50 144 C 54 145 59 145 64 146 C 65 146 68 147 69 146 C 73 145 71 144 72 143 C 73 141 82 141 85 142 C 86 142 96 142 97 143 C 101 146 115 147 121 146 C 124 146 122 142 120 141 C 117 139 116 139 113 138 C 108 138 98 136 96 133 C 95 133 95 130 97 128 C 98 127 102 130 104 130 C 108 130 108 128 112 129 C 115 130 124 131 127 132 C 129 133 130 132 132 133 C 136 134 140 134 144 135 C 147 136 147 137 150 138 C 153 139 160 138 164 138 C 167 138 173 139 176 138 C 178 137 186 136 189 137 C 196 140 203 144 212 146 C 220 148 230 149 238 150 C 251 153 265 153 276 156 C 277 156 289 156 288 157 C 287 160 277 159 272 159 C 260 161 246 159 234 159 C 231 159 226 158 223 159 C 213 161 201 160 191 162 C 187 163 181 162 177 163 C 173 164 161 165 157 164 C 155 164 157 162 155 161 C 151 160 145 161 141 161 C 135 161 129 160 122 160 C 118 160 114 160 110 161 C 104 162 96 161 90 162 C 88 163 84 162 81 162 C 74 162 67 162 59 162 C 49 162 39 162 29 162 C 25 162 20 161 17 162 C 11 163 5 164 -1 164 Z" opacity="0.9"></path>
+            </svg>
+          </div>
+
+          <div id="hills_explanation" class="hills_fill explanation_layer">
+            <svg viewBox="0 0 400 300">
+              <path d="M -1 199 C 7 196 17 193 26 188 C 31 185 37 182 43 179 C 46 177 50 177 52 174 C 53 174 56 174 57 173 C 62 172 68 173 73 172 C 76 171 78 171 81 171 C 88 172 95 175 100 179 C 103 182 109 182 113 185 C 115 187 117 189 119 190 C 130 195 141 194 152 196 C 161 198 171 199 180 199 C 185 199 190 199 194 199 C 196 199 198 199 200 199 C 207 196 215 197 222 194 C 225 193 227 188 231 186 C 235 183 240 182 244 179 C 248 176 253 177 257 175 C 257 174 257 173 258 173 C 260 172 262 172 263 172 C 271 168 278 165 286 161 C 289 159 294 160 297 159 C 300 158 300 157 302 155 C 302 154 304 155 305 155 C 307 154 312 152 314 151 C 316 149 319 146 322 145 C 323 145 325 145 326 145 C 330 144 338 144 342 145 C 350 145 355 153 361 156 C 363 157 363 161 365 162 C 373 165 380 172 389 174 C 390 174 392 176 393 177 C 396 178 400 179 403 179 L 400,300 0,300 Z"></path>
+            </svg>
+          </div>
+
+          <div id="skytree_explanation" class="skytree_fill explanation_layer">
+            <svg viewBox="0 0 400 300">
+              <path d="M 0,200 20,200 20,160 25,160 25,155 32,155 32,147 33,147 33,155 35,155 35,160 40,160 40,200 90,200 90,170 110,170 110,150 140,150 140,160 160,160 160,150 170,150 170,145 171,145 171,150 190,150 190,190 210,190 210,200 215,200 215,125 225,125 225,123 230,123 230,125 235,125 235,220 300,220 304,170 307,110 304,100 304,97 308,96 309,78 307.5,77 309,75.5 308,74 309.5,73 310,62 311.5,61.5 312.5,20 314.5,20 315.5,61.5 317,62 317.5,73 319,74 318,75.5 319.5,77 318,78 319,96 323,97 323,100 320,110 323,170 327,220 400,220 400,400 0,400 0,200 Z"></path>
+            </svg>
+          </div>
+
+          <div id="city_explanation" class="city_fill explanation_layer">
+            <svg viewBox="0 0 400 300">
+              <path d="M 0,210 40,210 40,250 50,250 50,100 55,100 59,93 62.5,96 66,93 70,100 75,100 75,195 95,195 95,235 125,235 125,125 155,125 155,205 175,205 175,225 215,225 215,195 245,195 245,115 265,115 265,215 275,215 275,115 286,115 286,110 287,110 287,115 291,115 291,105 292,105 292,115 295,115 295,195 335,195 335,135 345,135 345,130 349,130 349,125 350,125 350,130 352,130 352,126 353,126 353,130 355,130 355,135 360,135 360,175 380,175 380,200 400,200 400,300 0,300 0,210 Z"></path>
+            </svg>
+          </div>
+
+          <div id="tokyo_tower_explanation" class="tokyo_tower_fill explanation_layer">
+            <svg viewBox="0 0 400 300">
+              <path d="M 0,225 10,225 10,165 25,160 25,245 45,245 45,145 48,145 48,135 49,135 49,145 65,145 65,255 75,255 Q 95,245 100,195 L 98,195 97,187 100.5,187 Q 102,167 103,127 L 104,127 105,87 106,127 107,127 Q 108,167 109.5,187 L 113,187 112,195 110,195 Q 115,245 135,255 L 155,255 155,175 162,175 162,168 163,168 163,175 175,175 175,255 225,255 225,235 Q 221,175 230,135 231,127 236,126 239,125 242,126 247,127 248,135 257,175 253,235 L 273,235 273,245 293,245 293,185 308,185 308,175 318,175 318,205 338,205 338,245 348,245 348,165 378,165 378,135 400,135 400,300 0,300 0,225 Z"></path>
+            </svg>
+          </div>
+
+          <div id="sensoji_explanation" class="sensoji_fill explanation_layer">
+            <svg viewBox="0 0 400 300">
+              <path d="M 0,300 142,300 142,250 138,250 142,246 137,241 117,240 115,235 110,233 110,232 Q 118,231 120,229 L 120,227 Q 135,222 140,202 L 200,202 200,287 195,287 195,284 Q 185,281 185,266 185,251 195,248 L 175,248 175,300 200,300 225,300 225,248 205,248 Q 215,251 215,266 215,281 205,284 L 205,287 200,287 200,202 260,202 Q 265,222 280,227 L 280,229 Q 282,231 290,232 L 290,233 285,235 283,240 263,241 258,246 262,250 258,250 258,300 Z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div></div>
+
+        <p>Then when you scroll down the page, the layers further down the Z axis will move slower, creating a parallax effect!</p>
       </div>
     </div>
   </div>

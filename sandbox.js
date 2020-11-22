@@ -106,11 +106,11 @@ const tokyo_tower = [
   [50,0],[0,-20],"Q",[-4,-60],[9,-40],[1,-8],[5,-1],[3,-1],[3,1], //left side of curved tower
   [5,1],[1,8],[9,40],[-4,60],
   "L",[20,0],[0,10],[20,0],[0,-60],[15,0],[0,-10],[10,0],[0,30],[20,0],[0,40],[10,0],[0,-80],[30,0],[0,-30],[22,0],
-  [0,190],[-400,0],[0,-100]
+  [0,165],[-400,0],[0,-75]
 ]
 
 document.getElementById("tokyo_tower").childNodes[1].childNodes[1]
-.setAttribute("d",draw(0,200,tokyo_tower))
+.setAttribute("d",draw(0,225,tokyo_tower))
 
 
 
