@@ -1,5 +1,7 @@
 # CSS Parallax City Skyline
 
+I made this parallax Tokyo city skyline with pure CSS and SVG!
+
 Live Site: https://harryli0088.github.io/css-parallax-city-skyline/
 
 ![Screenshot](/css-parallax-city-skyline.png)
