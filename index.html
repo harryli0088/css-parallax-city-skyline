@@ -142,6 +142,13 @@
       justify-content: space-around;
     }
 
+    .code {
+      font-family: monospace;
+      background: #eee;
+      padding: 0.25em;
+      border-radius: 5px;
+    }
+
     #explanation_layers_container {
       position: relative;
       width: 50vw;
@@ -370,7 +377,7 @@
       <div id="explanation">
         <h2>How it works</h2>
 
-        <p>Using the CSS perspective property, we can shift elements along the Z axis (going in and out of the screen).</p>
+        <p>Using the CSS <span class="code">perspective</span> property, we can shift elements along the Z axis (going in and out of the screen).</p>
 
         <div id="explanation_layers_container">
           <div id="fake_scrollbar_container"><div id="fake_scrollbar"></div></div>
